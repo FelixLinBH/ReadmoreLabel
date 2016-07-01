@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ReadMoreLabel_Example' do
+  pod 'ReadMoreLabel', :path => '../'
+
+  target 'ReadMoreLabel_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

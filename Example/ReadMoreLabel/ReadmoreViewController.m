@@ -7,7 +7,7 @@
 //
 
 #import "ReadmoreViewController.h"
-
+#import <ReadMoreLabel/ReadMoreLabel.h>
 @interface ReadmoreViewController ()
 
 @end
@@ -18,6 +18,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    ReadMoreLabel *label = [[ReadMoreLabel alloc]initWithFrame:CGRectMake(10, 50, 300, 300)];
+    label.text = @"This is text. This is \r\ntext. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text. This is text.";
+    label.numberOfLines = 4;
+    label.font = [UIFont systemFontOfSize:16.0];
+    label.isTrimEscapeCharacter = YES;
+    [label appendTailString:@"..." color:[UIColor blueColor]];
+    [label appendTailString:@"Read" color:[UIColor redColor]];
+    [label appendTailString:@"More" color:[UIColor greenColor] font:[UIFont systemFontOfSize:18.0]];
+    [self.view addSubview:label];
+    
 }
 
 - (void)didReceiveMemoryWarning
